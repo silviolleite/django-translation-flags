@@ -1,0 +1,28 @@
+.icon-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.flag-icon {
+  .icon-background;
+  position: relative;
+  display: inline-block;
+  width: unit((4 / 3), em);
+  line-height: 1em;
+  &:before {
+    content: '\00a0';
+  }
+  &.flag-icon-squared {
+    width: 1em;
+  }
+}
+
+.flag-icon(@code) {
+  .flag-icon-@{code} {
+    background-image: ~'url(@{css-path}@{rect-path}/@{code}.svg)';
+    &.flag-icon-squared {
+      background-image: ~'url(@{css-path}@{square-path}/@{code}.svg)';
+    }
+  }
+}
