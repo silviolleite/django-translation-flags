@@ -97,32 +97,26 @@ Inject the required meta tags in your `base.html` (or wherever your HTML &lt;hea
 ```html
 {% load flags %}
 
-<head>
     <ul>
         {% languages %}
     </ul>
-</head>
 ```
 By default it will show the rectangular icons, but you can change it to `square`:
 ```html
 {% load flags %}
 
-<head>
     <ul>
         {% languages 'square' %}
     </ul>
-</head>
 ```
 
 Optionally you can set your custom class for HTML tags: 
 ```html
 {% load flags %}
 
-<head>
     <ul>
         {% languages 'square' li_class='your-li-class' a_class='your-a-class' %}
     </ul>
-</head>
 ```
 
 The `languages` template tags accept `**kwargs` to configure the HTML elements.
