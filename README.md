@@ -9,7 +9,8 @@
 This Django app provides integration for translation options in templates with some most common standard world languages. This is useful fow when you need to display language options in yours Django Apps. 
 
 
-#### 1. Requirements
+Requirements
+=====
 Django Translation Flags require Django Internationalization and localization properly configured. You can see more about theses settings in [https://docs.djangoproject.com/en/2.1/topics/i18n/](https://docs.djangoproject.com/en/2.1/topics/i18n/)
 
 Basically you need to:
@@ -62,7 +63,8 @@ django-admin compilemessages
 
 For more detailed information on how to create language files it is suggested to read the documentation: [https://docs.djangoproject.com/en/2.1/topics/i18n/translation/#how-to-create-language-files](https://docs.djangoproject.com/en/2.1/topics/i18n/translation/#how-to-create-language-files)
 
-#### 1. Install
+Install
+=====
 Install from PyPI:
 
 ```
