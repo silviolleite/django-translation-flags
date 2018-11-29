@@ -6,7 +6,7 @@
 [![PyPI - Downloads](https://img.shields.io/pypi/dd/django-translation-flags.svg)](https://pypi.org/project/django-pwa/)
 [![PyPI - Version](https://img.shields.io/pypi/v/django-translation-flags.svg)](https://pypi.org/project/django-translation-flags)
 
-This Django app provides integration for translation options in templates with some most common standard world languages. This is useful fow when you need to display language options in yours Django Apps.
+This Django app provides integration for translation options in templates with some most common standard world languages. This is useful fow when you need to display language options in yours Django Apps. 
 
 
 #### 1. Requirements
@@ -147,6 +147,8 @@ How does it work?
 The Django Translation Flags has a `CSS` file where all the most important languages flags are configured. The avaliable flags are:
 
 `af`: Afrikaans, `ar`: Arabic, `az`: Azerbaijani, `de`: German, `en`: English, `en-au`: Australian English, `es`: Spanish, `es-ar`: Argentinian Spanish, `es-mx`: Mexican Spanish, `fr`: French, `hi`: Hindi, `hu`: Hungarian, `id`: Indonesian, `it`: Italian, `ja`: Japanese, `ko`: Korean, `nl`: Dutch (Nederlands), `pl`: Polish, `pt`: Portuguese, `pt-br`: Brazilian Portuguese, `ru`: Russian, `sv`: Swedish, `tr`: Turkish, `uk`: Ukrainian, `zh-cn`: Simplified Chinese, `zh-hans`: Simplified Chinese and `zh-hant`: Traditional Chinese.
+
+![](assets/img/flags.png)
 
 The App get the language code from `LANGUAGES` on `settings.py` and then it makes the magic happen.
 
