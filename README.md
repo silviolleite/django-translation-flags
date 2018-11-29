@@ -1,5 +1,11 @@
 # Django Translation Flags
 
+[![Build Status](https://travis-ci.org/silviolleite/django-translation-flags.svg)](https://travis-ci.org/silviolleite/django-translation-flags)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1d00a2cbf958477ca97e/maintainability)](https://codeclimate.com/github/silviolleite/django-translation-flags/maintainability)
+[![codecov](https://codecov.io/gh/silviolleite/django-translation-flags/branch/master/graph/badge.svg)](https://codecov.io/gh/silviolleite/django-translation-flags) 
+[![PyPI - Downloads](https://img.shields.io/pypi/dd/django-translation-flags.svg)](https://pypi.org/project/django-pwa/)
+[![PyPI - Version](https://img.shields.io/pypi/v/django-translation-flags.svg)](https://pypi.org/project/django-translation-flags)
+
 This Django app provides integration for translation options in templates with some most common standard world languages. This is useful fow when you need to display language options in yours Django Apps.
 
 
