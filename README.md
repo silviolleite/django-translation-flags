@@ -158,6 +158,40 @@ Feedback
 =====
 Feedback and pull requests are strongly encouraged and kindly appreciated (-:
 
+Contributing
+=====
+
+#### Python
+
+1. Clone the repository.
+2. Create a virtualenv with Python 3.6 or 3.7
+3. Active the virtualenv.
+4. Install the dependencies.
+6. Run the tests.
+
+```console
+git clone https://github.com/silviolleite/django-translation-flags
+cd django-translation-flags
+python -m venv .venv
+.venv/bin/activate
+pip install -r requirements.txt
+python runtests.py
+```
+
+#### Less to CSS
+
+You will need of `node` and `npm` previously installed.
+
+1. Install the dependencies
+2. Run the gulp
+3. Edit the less files: `/assets/less/`
+
+```console
+npm install
+npm run build
+```
+
+
 Licensing
 =====
 All files in this repository are distributed under the MIT license.
