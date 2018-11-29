@@ -10,26 +10,26 @@ var runSequence = require('run-sequence');
 
 
 gulp.task('less', function () {
-  return gulp.src('./less/django-internationalization.less')
+  return gulp.src('./assets/less/django-translation-flags.less')
     .pipe(sourcemaps.init())
   .pipe(less())
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./css'));
+  .pipe(gulp.dest('./django-translation-flags/static/css'));
 });
 
 
 gulp.task('minify-css', function() {
-  return gulp.src(['./css/django-internationalization.css'])
+  return gulp.src(['./django-translation-flags/static/css/django-translation-flags.css'])
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./django-translation-flags/static/css'))
 });
 
 gulp.task('watch', function () {
-  gulp.watch('./less/*.less', ['less']);
-  gulp.watch('./css/django-internationalization.css', ['minify-css']);
+  gulp.watch('./assets/less/*.less', ['less']);
+  gulp.watch('./django-translation-flags/static/css/django-translation-flags.css', ['minify-css']);
 });
 
 gulp.task('dev', function(){

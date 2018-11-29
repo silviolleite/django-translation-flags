@@ -1,14 +1,14 @@
 {
-  "name": "django-internationalization",
+  "name": "django-translation-flags",
   "version": "1.0.0",
-  "description": "Generate the css and min.css to Django languages Icons",
+  "description": "Generator the css and min.css to Django Translation Flags",
   "main": "index.js",
   "scripts": {
     "build": "gulp dev"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/silviolleite/django-internationalization"
+    "url": "https://github.com/silviolleite/django-translation-flags"
   },
   "author": "silviolleite",
   "license": "MIT",

@@ -1,4 +1,27 @@
 .idea/
 .venv/
+
+# npm
 node_modules/
 package-lock.json
+
+
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+/dist/
+/build/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+/*.egg
+
+
+*.py[cod]
+*.orig
+build/
+dist/
+*.egg-info/
+.tox/
+.coverage
