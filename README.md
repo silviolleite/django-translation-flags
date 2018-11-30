@@ -78,7 +78,7 @@ Add `django-translation-flags` to your list of `INSTALLED_APPS` in settings.py:
 ```python
 INSTALLED_APPS = [
     ...
-    'django-translation-flags',
+    'django_translation_flags',
     ...
 ]
 ```
@@ -88,7 +88,7 @@ from django.conf.urls import url, include
 
 urlpatterns = [
     ...
-    path('i18n/', include('django-translation-flags.urls')),
+    path('i18n/', include('django_translation_flags.urls')),
     ...
 ]
 ```
