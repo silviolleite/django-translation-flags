@@ -29,7 +29,25 @@ LANGUAGES = [
 Only languages listed in the `LANGUAGES` setting can be selected.
 This example restricts languages that are available for automatic selection to German, English and Brazilian Portuguese
 
-2. Markup the text to translation:
+2. Add Middleware
+
+To use LocaleMiddleware, add 'django.middleware.locale.LocaleMiddleware' to your MIDDLEWARE setting. Because middleware order matters, follow these guidelines:
+
+- Make sure it’s one of the first middleware installed.
+- It should come after SessionMiddleware, because LocaleMiddleware makes use of session data. And it should come before CommonMiddleware because CommonMiddleware needs an activated language in order to resolve the requested URL.
+If you use CacheMiddleware, put LocaleMiddleware after it.
+
+For example, your MIDDLEWARE might look like this:
+
+```python
+MIDDLEWARE = [
+   'django.contrib.sessions.middleware.SessionMiddleware',
+   'django.middleware.locale.LocaleMiddleware',
+   'django.middleware.common.CommonMiddleware',
+]
+```
+
+3. Markup the text to translation:
 
 The format of `.po` files is straightforward. Each `.po` file contains a small bit of metadata, such as the translation maintainer’s contact information, but the bulk of the file is a list of messages – simple mappings between translation strings and the actual translated text for the particular language.
 
@@ -49,7 +67,7 @@ msgstr ""
 
 ```
 
-3. Generate and compile it using the commands bellow:
+4. Generate and compile it using the commands bellow:
 
 - The first step is to create a message file for a new language:
 ```bash
@@ -62,6 +80,8 @@ django-admin compilemessages
 ```
 
 For more detailed information on how to create language files it is suggested to read the documentation: [https://docs.djangoproject.com/en/2.1/topics/i18n/translation/#how-to-create-language-files](https://docs.djangoproject.com/en/2.1/topics/i18n/translation/#how-to-create-language-files)
+
+
 
 Install
 =====
