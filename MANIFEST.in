@@ -1,1 +1,3 @@
 include *.md
+recursive-include django_translation_flags/templates *
+recursive-include django_translation_flags/static *

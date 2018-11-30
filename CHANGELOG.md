@@ -13,3 +13,7 @@
  ## 1.0.2
  
   - Update the README.md - Fix the module name
+  
+ ## 1.0.3
+ 
+  - Fix the MANIFEST.in to include the tmplates and statics files  
