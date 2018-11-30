@@ -9,3 +9,7 @@
  - Fix tox.ini deps
  - Add CHANGELOG.md 
  - Update the README.md
+ 
+ ## 1.0.2
+ 
+  - Update the README.md - Fix the module name
