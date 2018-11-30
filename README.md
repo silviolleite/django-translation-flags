@@ -11,7 +11,7 @@ This Django app provides integration for translation options in templates with s
 
 Requirements
 =====
-Django Translation Flags require Django Internationalization and localization properly configured. You can see more about theses settings in [https://docs.djangoproject.com/en/2.1/topics/i18n/](https://docs.djangoproject.com/en/2.1/topics/i18n/)
+Django Translation Flags require Django Internationalization and localization properly configured. You can see more about these settings in [https://docs.djangoproject.com/en/2.1/topics/i18n/](https://docs.djangoproject.com/en/2.1/topics/i18n/)
 
 Basically you need to:
  
@@ -97,29 +97,34 @@ Inject the required meta tags in your `base.html` (or wherever your HTML &lt;hea
 ```html
 {% load flags %}
 
-    <ul>
-        {% languages %}
-    </ul>
+<ul>
+    {% languages %}
+</ul>
 ```
 By default it will show the rectangular icons, but you can change it to `square`:
 ```html
 {% load flags %}
 
-    <ul>
-        {% languages 'square' %}
-    </ul>
+<ul>
+    {% languages 'square' %}
+</ul>
 ```
 
 Optionally you can set your custom class for HTML tags: 
 ```html
 {% load flags %}
 
-    <ul>
-        {% languages 'square' li_class='your-li-class' a_class='your-a-class' %}
-    </ul>
+<ul>
+    {% languages 'square' li_class='your-li-class' a_class='your-a-class' %}
+</ul>
 ```
 
-The `languages` template tags accept `**kwargs` to configure the HTML elements.
+The `languages` template tags accept `**kwargs` to configure the class to HTML tags.
+So you can set the classes to these HTML tags:
+
+**li_class**: Class to `li` tag (Default: empty)
+
+**a_class**: Class to `a` tag (Default: empty)
 
 The HTML structure is:
 
@@ -131,22 +136,22 @@ The HTML structure is:
 </li>
 ```
 
-So you can set the classes to these HTML tags:
-
-**li_class**: Class to `li` tag (Default: empty)
-
-**a_class**: Class to `a` tag (Default: empty)
-
 
 How does it work?
 =====
-The Django Translation Flags has a `CSS` file where all the most important languages flags are configured. The avaliable flags are:
+The Django Translation Flags has a `CSS` file where all the most important languages flags are configured. 
+
+The avaliable flags are:
 
 `af`: Afrikaans, `ar`: Arabic, `az`: Azerbaijani, `de`: German, `en`: English, `en-au`: Australian English, `es`: Spanish, `es-ar`: Argentinian Spanish, `es-mx`: Mexican Spanish, `fr`: French, `hi`: Hindi, `hu`: Hungarian, `id`: Indonesian, `it`: Italian, `ja`: Japanese, `ko`: Korean, `nl`: Dutch (Nederlands), `pl`: Polish, `pt`: Portuguese, `pt-br`: Brazilian Portuguese, `ru`: Russian, `sv`: Swedish, `tr`: Turkish, `uk`: Ukrainian, `zh-cn`: Simplified Chinese, `zh-hans`: Simplified Chinese and `zh-hant`: Traditional Chinese.
 
 ![](assets/img/flags.png)
 
-The App get the language code from `LANGUAGES` on `settings.py` and then it makes the magic happen.
+The App get the language code from `LANGUAGES` on `settings.py` and then it concatenates the language codes with the name of the icon class and shows the correct flags..
+
+See the all Django supported languages in module `django.conf.locale.LANG_INFO`
+*LANG_INFO is a dictionary structure to provide meta information about languages.*
+
 
 Feedback
 =====
