@@ -21,12 +21,17 @@
 <form action="{% url 'set_language' %}" method="post" id="setlang">
     {% csrf_token %}
     <input name="next" type="hidden" value="{{ redirect_to }}">
-    <input type="hidden" name="language">
+    <input type="hidden" name="language" id="language">
 </form>
 
 <script type="text/javascript">
-            function set_language(language) {
-                $('input[name="language"]').val(language);
-                $('form#setlang').submit();
-            }
+        if (window.location.hash){
+            var hash = window.location.hash;
+            document.getElementById('language').value = hash.replace('#', '');
+            document.getElementById('setlang').submit()
+        }
+    function set_language(language) {
+        $('input[name="language"]').val(language);
+        $('form#setlang').submit();
+    }
 </script>
