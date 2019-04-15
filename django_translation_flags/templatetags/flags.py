@@ -3,11 +3,12 @@ from django import template
 register = template.Library()
 
 
-@register.inclusion_tag('languages.html')
-def languages(flag_type='', **kwargs):
+@register.inclusion_tag('languages.html', takes_context=True)
+def languages(context, flag_type='', **kwargs):
     """
     Templatetag languages
 
+    :param context: Getting context
     :param flag_type: Default empty, It acepts the string 'square'
     :param kwargs: Classes to HTML tags
     :return: A dict with classes
@@ -19,4 +20,5 @@ def languages(flag_type='', **kwargs):
     return {
         'icon_class': flag_type,
         'classes': classes,
+        'redirect_to': context.request.get_full_path
     }

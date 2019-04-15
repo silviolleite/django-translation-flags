@@ -9,7 +9,7 @@
 
 {% for language in languages %}
 <li {% if classes.li_class != '' %} class="{{ classes.li_class }}" {% endif %}>
-    <a tabindex="-1" href="#{{ language.code }}"
+    <a href="#{{ language.code }}"
        onclick="set_language('{{ language.code }}')"
        {% if classes.a_class != '' %} class="{{ classes.a_class }}" {% endif %}
        title="{{ language.name_local }}">
