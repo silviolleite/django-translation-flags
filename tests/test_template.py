@@ -1,10 +1,12 @@
-from django.test import TestCase
-from django.template import Context, Template
+from django.test import TestCase, RequestFactory
+from django.template import Template, RequestContext
 
 
 class TemplateTagTest(TestCase):
     def setUp(self):
-        context = Context({})
+        self.factory = RequestFactory()
+        request = self.factory.get('/teste')
+        context = RequestContext(request=request)
         template_to_render = Template(
             '{% load flags %}'
             '{% languages %}'
@@ -15,8 +17,8 @@ class TemplateTagTest(TestCase):
         """Must contains the tags in HTML"""
         tags = (
             '<li',
-            '<a tabindex="-1" href="#pt-br"',
-            '<a tabindex="-1" href="#en"',
+            '<a href="#pt-br"',
+            '<a href="#en"',
             '<span class="flag-icon flag-icon-pt-br',
             '<span class="flag-icon flag-icon-en'
         )
@@ -56,7 +58,9 @@ class TemplateTagTest(TestCase):
 
 class TemplatetagWithSquareTest(TestCase):
     def setUp(self):
-        context = Context({})
+        self.factory = RequestFactory()
+        request = self.factory.get('/teste')
+        context = RequestContext(request=request)
         template_to_render = Template(
             '{% load flags %}'
             "{% languages 'square'  %}"
@@ -75,7 +79,9 @@ class TemplatetagWithSquareTest(TestCase):
 
 class TemplatetagWithKwargsTest(TestCase):
     def setUp(self):
-        context = Context({})
+        self.factory = RequestFactory()
+        request = self.factory.get('/teste')
+        context = RequestContext(request=request)
         template_to_render = Template(
             '{% load flags %}'
             "{% languages 'square' li_class='your-li-class' a_class='your-a-class' %}"
